@@ -4,6 +4,10 @@ from pillow_heif import register_heif_opener
 import typeCheck
 
 def heic2png():
+    """Conversion of image file from .heic to .png
+    
+    path (str): input file or path
+    """
     register_heif_opener()
     path = input('Input file or path: ')
     if typeCheck.isHeic(path):
@@ -18,6 +22,5 @@ def heic2png():
         raise ValueError('Input must be a valid image or directory.')
     print('File converted successfully')
 
-# path = 'data/'
 if __name__ == '__main__':
     heic2png()
