@@ -1,17 +1,17 @@
 import utility.typeCheck
-import smoothing.smoothing
+import smoothing
 import os
 
 def main(imagePath: str, d: int = 9, 
          sigmaColor: float = 75, sigmaSpace: float = 75):
     count = 0
     if utility.typeCheck.isImage(imagePath):
-        smoothing.smoothing.smoothing(imagePath, d, sigmaColor, sigmaSpace)
+        smoothing.smoothing(imagePath, d, sigmaColor, sigmaSpace)
         count += 1
     elif utility.typeCheck.isDirectory(imagePath):
         for path in os.listdir(imagePath):
             if utility.typeCheck.isImage(path):
-                smoothing.smoothing.smoothing(os.path.join(imagePath, path), 
+                smoothing.smoothing(os.path.join(imagePath, path), 
                                               d, sigmaColor, sigmaSpace)
                 count += 1
     else:
