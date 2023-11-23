@@ -1,7 +1,9 @@
 import cv2
 import os
 
-def smoothing(imagePath:str, extension:str ='.png'):
+def smoothing(imagePath: str, d: int = 9, 
+              sigmaColor: float = 75, sigmaSpace: float = 75, 
+              extension: str = '.png'):
     """Smoothing faces on an image from file path using bilateral filter in BGR domain
     Faces are detected using grey scaled image with classifier from openCV
 
@@ -22,7 +24,7 @@ def smoothing(imagePath:str, extension:str ='.png'):
     for (x, y, w, h) in face:
         face_img.append(img[y:y + h, x:x + w])
     for i, (x, y, w, h) in enumerate(face):
-        filtered_img = cv2.bilateralFilter(face_img[i], 9,75,75)
+        filtered_img = cv2.bilateralFilter(face_img[i], d, sigmaColor, sigmaSpace)
         img[y:y+h, x:x+w] = filtered_img
 
     new_path = os.path.splitext(imagePath)[0] + '_smoothing' + extension

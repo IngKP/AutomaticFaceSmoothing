@@ -2,15 +2,17 @@ import utility.typeCheck
 import smoothing.smoothing
 import os
 
-def main(imagePath:str):
+def main(imagePath: str, d: int = 9, 
+         sigmaColor: float = 75, sigmaSpace: float = 75):
     count = 0
     if utility.typeCheck.isImage(imagePath):
-        smoothing.smoothing.smoothing(imagePath)
+        smoothing.smoothing.smoothing(imagePath, d, sigmaColor, sigmaSpace)
         count += 1
     elif utility.typeCheck.isDirectory(imagePath):
         for path in os.listdir(imagePath):
             if utility.typeCheck.isImage(path):
-                smoothing.smoothing.smoothing(os.path.join(imagePath, path))
+                smoothing.smoothing.smoothing(os.path.join(imagePath, path), 
+                                              d, sigmaColor, sigmaSpace)
                 count += 1
     else:
         raise ValueError('Input must be a valid image or directory.')
