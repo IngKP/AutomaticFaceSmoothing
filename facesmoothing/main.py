@@ -1,4 +1,4 @@
-import utility.typeCheck
+from utility import typeCheck
 import smoothing
 import os
 
@@ -7,12 +7,12 @@ def main(imagePath: str, d: int = 9,
     """
     """
     count = 0
-    if utility.typeCheck.isImage(imagePath):
+    if typeCheck.isImage(imagePath):
         smoothing.smoothing(imagePath, d, sigmaColor, sigmaSpace)
         count += 1
-    elif utility.typeCheck.isDirectory(imagePath):
+    elif typeCheck.isDirectory(imagePath):
         for path in os.listdir(imagePath):
-            if utility.typeCheck.isImage(path):
+            if typeCheck.isImage(path):
                 smoothing.smoothing(os.path.join(imagePath, path), 
                                               d, sigmaColor, sigmaSpace)
                 count += 1
@@ -22,6 +22,6 @@ def main(imagePath: str, d: int = 9,
 
 if __name__ == '__main__':
     imagePath = input('input image file or directory: ')
-    d, sigmaColor, sigmaSpace = input('input d, sigmaColor, sigmaSpace: ')
+    d, sigmaColor, sigmaSpace = input('input d, sigmaColor, sigmaSpace: ').split()
     main(imagePath, d, sigmaColor, sigmaSpace)
     
