@@ -4,6 +4,8 @@ import os
 
 def main(imagePath: str, d: int = 9, 
          sigmaColor: float = 75, sigmaSpace: float = 75):
+    """
+    """
     count = 0
     if utility.typeCheck.isImage(imagePath):
         smoothing.smoothing(imagePath, d, sigmaColor, sigmaSpace)
@@ -20,5 +22,6 @@ def main(imagePath: str, d: int = 9,
 
 if __name__ == '__main__':
     imagePath = input('input image file or directory: ')
-    main(imagePath)
+    d, sigmaColor, sigmaSpace = input('input d, sigmaColor, sigmaSpace: ')
+    main(imagePath, d, sigmaColor, sigmaSpace)
     

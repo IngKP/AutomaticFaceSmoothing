@@ -3,13 +3,13 @@ from PIL import Image
 from pillow_heif import register_heif_opener
 import typeCheck
 
-def heic2png():
+def heic2png(path: str):
     """Conversion of image file from .heic to .png
     
-    path (str): input file or path
+    Args:
+        path (str): Input file or path
     """
     register_heif_opener()
-    path = input('Input file or path: ')
     if typeCheck.isHeic(path):
         image = Image.open(path)
         image.save(os.path.splitext(path)[0] + '.png')
@@ -23,4 +23,5 @@ def heic2png():
     print('File converted successfully')
 
 if __name__ == '__main__':
-    heic2png()
+    path = input('Input file or path: ')
+    heic2png(path)

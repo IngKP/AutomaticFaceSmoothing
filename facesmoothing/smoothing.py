@@ -8,8 +8,11 @@ def smoothing(imagePath: str, d: int = 9,
     Faces are detected using grey scaled image with classifier from openCV
 
     Args:
-        imagePath (string): path of an image file
-        extension (string): a wanted extension for output image
+        imagePath (string): Path of an image file.
+        d (int): Diameter of each pixel neighborhood that is used during filtering
+        sigmaColor (float): Filter sigma in the color space, used in bilateral filter
+        sigmaSpace (float): Filter sigma in the coordinate space, used in bilateral filter
+        extension (string): A wanted extension for output image
     """
     img = cv2.imread(imagePath)
     gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
