@@ -23,5 +23,5 @@ def main(imagePath: str, d: int = 9,
 if __name__ == '__main__':
     imagePath = input('input image file or directory: ')
     d, sigmaColor, sigmaSpace = input('input d, sigmaColor, sigmaSpace: ').split()
-    main(imagePath, d, sigmaColor, sigmaSpace)
+    main(imagePath, int(d), float(sigmaColor), float(sigmaSpace))
     

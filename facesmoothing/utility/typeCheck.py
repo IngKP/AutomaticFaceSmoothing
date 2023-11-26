@@ -3,7 +3,7 @@ import os
 # more extension can be added
 def isImage(filename: str, 
             extension: str | tuple[str, ...] =('.png', '.jpg', '.jpeg', '.bmp', '.dib', 
-                                 '.pbm', '.pgm', '.ppm' '.pxm', '.pnm')):
+                                 '.pbm', '.pgm', '.ppm' '.pxm', '.pnm', 'webp')):
     return filename.endswith(extension)
 
 def isHeic(filename:str, 
