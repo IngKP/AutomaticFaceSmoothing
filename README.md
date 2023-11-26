@@ -51,7 +51,7 @@ Input Image |  Output Image
 ### Performance issues:
 The facial detection feature from openCV is still not perfect. As shown below, there will be some parts of the images that are recognized as faces even if it is not.
 
-| ![alt text](resources/Hillary-Rodham-Clinton-2003_rectangle.png "Input") | 
+| ![alt text](resources/Hillary-Rodham-Clinton-2003_rectangle.png "Detected faces") | 
 |:--:| 
 | Faces detected in an image|
 ## Development plan
