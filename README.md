@@ -43,7 +43,7 @@ Below is an example of the application using an image of Hillary Clinton (scott 
 
 Input Image |  Output Image
 :-------------------------:|:-------------------------:
-![alt text](resources\Hillary-Rodham-Clinton-2003.webp "Input") | ![alt text](resources\Hillary-Rodham-Clinton-2003_smoothing.png "output")
+![alt text](resources/Hillary-Rodham-Clinton-2003.webp "Input") | ![alt text](resources/Hillary-Rodham-Clinton-2003_smoothing.png "output")
 
 
 ## Known Issues
@@ -51,7 +51,7 @@ Input Image |  Output Image
 ### Performance issues:
 The facial detection feature from openCV is still not perfect. As shown below, there will be some parts of the images that are recognized as faces even if it is not.
 
-| ![alt text](resources\Hillary-Rodham-Clinton-2003_rectangle.png "Input") | 
+| ![alt text](resources/Hillary-Rodham-Clinton-2003_rectangle.png "Input") | 
 |:--:| 
 | Faces detected in an image|
 ## Development plan
